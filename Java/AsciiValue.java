@@ -6,7 +6,7 @@ public class AsciiValue
 	{
 		Scanner accept=new Scanner(System.in);
 		char character;
-		System.out.print("Enter a character : ");
+		System.out.print("Enter any character : ");
 		character=accept.next().charAt(0);
 		int AsciiNumber=(int)character;
 		System.out.println("Ascii value of "+character+" is "+AsciiNumber);

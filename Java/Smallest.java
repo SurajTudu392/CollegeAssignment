@@ -1,3 +1,4 @@
+
 // Write a Java Program to Find Smallest of Three Numbers Using Ternary Operator
 import java.util.*;
 public class Smallest
@@ -16,3 +17,4 @@ public class Smallest
 		System.out.printf("Smallest of [%d,%d,%d] is %d . ",x,y,z,smallest);
 	}
 }
+ 

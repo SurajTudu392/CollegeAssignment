@@ -11,21 +11,22 @@ public class NumberToWord
 		return word[n];
 		return prefix[n/10-2]+" "+((n%10==0)?"":word[n%10]);
 	}
-	public String triple(int n)
+	public String triple(int n,boolean zero)
 	{
 		if(n<100)
-			return pair(n);
-		return pair(n/100)+" hundred and "+pair(n%100);
+			return (pair(n).equals("zero")?(zero==true)?"zero":"":pair(n));
+		return pair(n/100)+" hundred "+(pair(n%100).equals("zero")?"":"and "+pair(n%100));
 	}
 	public String convert(int n)
 	{
 		String postfix[]={"","thousand","lakh","crore","arab","kharab","nil","padma","shank"};
 		int count=1,quotient;
 		String word="";
+		boolean zero=(n==0);
 		do
 		{
 			quotient=(int)Math.pow(10,2+1*(int)(1.0/count));
-			word=triple(n%quotient)+" "+postfix[count-1]+" "+word;
+			word=triple(n%quotient,zero)+" "+postfix[count-1]+" "+word;
 			n=n/quotient;
 			count++;
 		}
